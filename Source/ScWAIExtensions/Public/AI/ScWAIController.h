@@ -15,7 +15,7 @@
  *
  */
 UCLASS(MinimalAPI, Abstract, meta = (DisplayName = "[ScW] AI Controller"))
-class AScWAIController : public AModularAIController, public IAbilitySystemInterface
+class AScWAIController : public AModularAIController, public IAbilitySystemInterface, public IScWTeamAgentInterface
 {
 	GENERATED_BODY()
 	
@@ -28,6 +28,13 @@ protected:
 	MODULE_API virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override; // AActor
 //~ End Initialize
 
+//~ Begin Behavior Tree
+public:
+
+	UPROPERTY(Category = "Behavior Tree", EditDefaultsOnly, BlueprintReadOnly)
+	TObjectPtr<UBehaviorTree> DefaultBehaviorTree;
+//~ End Behavior Tree
+
 //~ Begin Blackboard
 protected:
 	virtual bool InitializeBlackboard(UBlackboardComponent& InBlackboardComponent, UBlackboardData& InBlackboardAsset) override; // AAIController
@@ -35,11 +42,23 @@ protected:
 
 //~ Begin Team
 public:
+	MODULE_API virtual FGenericTeamId GetGenericTeamId() const override; // IGenericTeamAgentInterface
+	MODULE_API virtual void SetGenericTeamId(const FGenericTeamId& InTeamID) override; // IGenericTeamAgentInterface
+
+	MODULE_API virtual const FGameplayTag& GetTeamTag() const override { return TeamTag; } // IScWTeamAgentInterface
+	MODULE_API virtual void SetTeamTag(const FGameplayTag& InTeamTag) override; // IScWTeamAgentInterface
+	MODULE_API virtual FOnScWTeamIndexChangedDelegate* GetOnTeamIndexChangedDelegate() override; // IScWTeamAgentInterface
+protected:
 
 	UFUNCTION(Category = "Team", BlueprintCallable)
-	MODULE_API FGenericTeamId GetTeamId() const { return GetGenericTeamId(); }
+	void UpdateTeamAttitude(UAIPerceptionComponent* InPerception);
 
-	MODULE_API virtual void SetGenericTeamId(const FGenericTeamId& InNewTeamID) override; // IGenericTeamAgentInterface
+	// Team tag used when this controller does not use PlayerState
+	UPROPERTY(Category = "Team", EditAnywhere, BlueprintReadOnly, meta = (EditCondition = "!bWantsPlayerState", Categories = "Team"))
+	FGameplayTag TeamTag;
+
+	UPROPERTY()
+	FOnScWTeamIndexChangedDelegate OnTeamChangedDelegate;
 //~ End Team
 
 //~ Begin Perception

@@ -35,3 +35,10 @@
 #include "Abilities/GameplayAbilityTypes.h"
 
 #include "Utils/ScWUtils.h"
+
+class FScWAIExtensionsModule : public IModuleInterface
+{
+public:
+	virtual void StartupModule() override; // IModuleInterface
+	virtual void ShutdownModule() override; // IModuleInterface
+};

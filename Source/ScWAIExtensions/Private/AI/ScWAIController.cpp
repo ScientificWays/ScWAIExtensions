@@ -2,6 +2,10 @@
 
 #include "AI/ScWAIController.h"
 
+#include "Tags/ScWCoreTags.h"
+
+#include "Team/ScWTeamSettings.h"
+
 #include "AI/ScWPFC_Base.h"
 #include "AI/ScWAIPC_Base.h"
 #include "AI/ScWAIFunctionLibrary.h"
@@ -20,20 +24,24 @@ AScWAIController::AScWAIController(const FObjectInitializer& InObjectInitializer
 
 	BaseAIPC = CreateDefaultSubobject<UScWAIPC_Base>("BaseAIPC");
 	SetPerceptionComponent(*BaseAIPC);
+
+	TeamTag = FScWCoreTags::Team_None;
 }
 
 void AScWAIController::PreInitializeComponents() // AActor
 {
 	Super::PreInitializeComponents();
 
-	
+	SetTeamTag(TeamTag);
 }
 
 void AScWAIController::BeginPlay() // AActor
 {
+	if (DefaultBehaviorTree)
+	{
+		RunBehaviorTree(DefaultBehaviorTree);
+	}
 	Super::BeginPlay();
-
-
 }
 
 void AScWAIController::EndPlay(const EEndPlayReason::Type EndPlayReason) // AActor
@@ -43,6 +51,9 @@ void AScWAIController::EndPlay(const EEndPlayReason::Type EndPlayReason) // AAct
 
 }
 //~ End Initialize
+
+//~ Begin Behavior Tree
+//~ End Behavior Tree
 
 //~ Begin Blackboard
 bool AScWAIController::InitializeBlackboard(UBlackboardComponent& InBlackboardComponent, UBlackboardData& InBlackboardAsset) // AAIController
@@ -56,16 +67,45 @@ bool AScWAIController::InitializeBlackboard(UBlackboardComponent& InBlackboardCo
 //~ End Blackboard
 
 //~ Begin Team
-void AScWAIController::SetGenericTeamId(const FGenericTeamId& InNewTeamId) // IGenericTeamAgentInterface
+FGenericTeamId AScWAIController::GetGenericTeamId() const // IGenericTeamAgentInterface
 {
-	Super::SetGenericTeamId(InNewTeamId);
-
-	if (BaseAIPC)
+	if (bWantsPlayerState)
 	{
-		if (UAIPerceptionSystem* AIPerceptionSys = UAIPerceptionSystem::GetCurrent(GetWorld()))
-		{
-			AIPerceptionSys->UpdateListener(*BaseAIPC);
-		}
+		const IScWTeamAgentInterface* PlayerStateTeamInterface = Cast<IScWTeamAgentInterface>(PlayerState);
+		ensureReturn(PlayerStateTeamInterface, FGenericTeamId::NoTeam);
+		return PlayerStateTeamInterface->GetGenericTeamId();
+	}
+	return GetDefault<UScWTeamSettings>()->GetGenericTeamIdFromTag(TeamTag);
+}
+
+void AScWAIController::SetGenericTeamId(const FGenericTeamId& InTeamID) // IGenericTeamAgentInterface
+{
+	if (bWantsPlayerState)
+	{
+		IScWTeamAgentInterface* PlayerStateTeamInterface = Cast<IScWTeamAgentInterface>(PlayerState);
+		ensureReturn(PlayerStateTeamInterface);
+		PlayerStateTeamInterface->SetGenericTeamId(InTeamID);
+	}
+	Super::SetGenericTeamId(InTeamID);
+	UpdateTeamAttitude(BaseAIPC);
+}
+
+void AScWAIController::SetTeamTag(const FGameplayTag& InTeamTag) // IScWTeamAgentInterface
+{
+	TeamTag = InTeamTag;
+	SetGenericTeamId(GetDefault<UScWTeamSettings>()->GetGenericTeamIdFromTag(TeamTag));
+}
+
+FOnScWTeamIndexChangedDelegate* AScWAIController::GetOnTeamIndexChangedDelegate() // IScWTeamAgentInterface
+{
+	return &OnTeamChangedDelegate;
+}
+
+void AScWAIController::UpdateTeamAttitude(UAIPerceptionComponent* InPerception)
+{
+	if (InPerception)
+	{
+		InPerception->RequestStimuliListenerUpdate();
 	}
 }
 //~ End Team
