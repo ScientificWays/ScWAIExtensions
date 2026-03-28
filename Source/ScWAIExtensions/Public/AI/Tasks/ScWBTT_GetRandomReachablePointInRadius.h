@@ -7,7 +7,7 @@
 #include "ScWBTT_GetRandomReachablePointInRadius.generated.h"
 
 /**
- * 
+ *	Task that finds a random navigable point within a radius of a center location and writes it to a blackboard key.
  */
 UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] BTT_GetRandomReachablePointInRadius", KeyWords = "FindRandomPointInRadius, FindRandomReachablePointInRadius"))
 class UScWBTT_GetRandomReachablePointInRadius : public UBTTaskNode

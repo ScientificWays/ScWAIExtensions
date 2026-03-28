@@ -9,7 +9,7 @@
 #include "ScWBTS_TurnTo.generated.h"
 
 /**
- * 
+ *	Service that smoothly rotates the pawn toward a blackboard target at a configurable speed.
  */
 UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] BTS_TurnTo"))
 class UScWBTS_TurnTo : public UBTService_BlackboardBase

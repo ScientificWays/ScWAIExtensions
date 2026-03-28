@@ -9,7 +9,7 @@
 #include "ScWBTD_CanShoot.generated.h"
 
 /**
- * 
+ *	Decorator that passes when the pawn's equipped weapon is ready to fire.
  */
 UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] BTD_CanShoot"))
 class UScWBTD_CanShoot : public UScWBTD_Tickable

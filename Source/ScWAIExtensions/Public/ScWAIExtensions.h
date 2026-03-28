@@ -29,7 +29,6 @@
 #include "AbilitySystemLog.h"
 #include "AbilitySystemStats.h"
 #include "AbilitySystemGlobals.h"
-#include "AbilitySystemGlobals.h"
 #include "AbilitySystemComponent.h"
 #include "Abilities/GameplayAbility.h"
 #include "Abilities/GameplayAbilityTypes.h"

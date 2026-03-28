@@ -12,7 +12,7 @@
 #define MODULE_API SCWAIEXTENSIONS_API
 
 /**
- *
+ *	Modular AI controller with team support, perception, patrol navigation, and focus rotation management.
  */
 UCLASS(MinimalAPI, Abstract, meta = (DisplayName = "[ScW] AI Controller"))
 class AScWAIController : public AModularAIController, public IAbilitySystemInterface, public IScWTeamAgentInterface
@@ -25,7 +25,7 @@ public:
 protected:
 	MODULE_API virtual void PreInitializeComponents() override; // AActor
 	MODULE_API virtual void BeginPlay() override; // AActor
-	MODULE_API virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override; // AActor
+	MODULE_API virtual void EndPlay(const EEndPlayReason::Type InEndPlayReason) override; // AActor
 //~ End Initialize
 
 //~ Begin Behavior Tree

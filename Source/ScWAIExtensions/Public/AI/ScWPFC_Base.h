@@ -9,7 +9,7 @@
 #include "ScWPFC_Base.generated.h"
 
 /**
- *
+ *	Base crowd-following path component with lifecycle hooks.
  */
 UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] AI PFC Base"))
 class UScWPFC_Base : public UCrowdFollowingComponent

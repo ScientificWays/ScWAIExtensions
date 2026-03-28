@@ -9,7 +9,7 @@
 #include "ScWBTT_ClearBlackboardKey.generated.h"
 
 /**
- * 
+ *	Task that clears the selected blackboard key value.
  */
 UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] BTT_ClearBlackboardKey"))
 class UScWBTT_ClearBlackboardKey : public UBTTask_BlackboardBase

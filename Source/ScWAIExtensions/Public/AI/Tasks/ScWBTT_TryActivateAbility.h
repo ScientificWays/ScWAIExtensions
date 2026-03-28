@@ -7,7 +7,7 @@
 #include "ScWBTT_TryActivateAbility.generated.h"
 
 /**
- * 
+ *	Task that attempts to activate a gameplay ability by tags or blackboard class key.
  */
 UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] BTT_TryActivateAbility", KeyWords = "TryUseAbility, ActivateAbility"))
 class UScWBTT_TryActivateAbility : public UBTTaskNode

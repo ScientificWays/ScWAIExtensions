@@ -9,7 +9,7 @@
 #include "ScWBTD_CheckOcclusion.generated.h"
 
 /**
- * 
+ *	Decorator that passes when a line trace between two blackboard targets is unoccluded.
  */
 UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] BTD_CheckOcclusion"))
 class UScWBTD_CheckOcclusion : public UScWBTD_Tickable
@@ -22,7 +22,7 @@ public:
 
 //~ Begin Decorator
 protected:
-	virtual FString GetStaticDescription() const; // UBTNode
+	virtual FString GetStaticDescription() const override; // UBTNode
 	virtual void InitializeFromAsset(UBehaviorTree& InTreeAsset) override; // UBTNode
 	virtual bool CalculateRawConditionValue(UBehaviorTreeComponent& InOwnerTree, uint8* InNodeMemory) const override; // UBTDecorator
 //~ End Decorator

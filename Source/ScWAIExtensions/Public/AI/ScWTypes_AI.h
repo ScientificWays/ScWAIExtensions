@@ -6,6 +6,9 @@
 
 #include "ScWTypes_AI.generated.h"
 
+/**
+ *	Priority levels for AI controller focus, ordered from lowest (Default) to highest (Gameplay3).
+ */
 UENUM(BlueprintType, meta = (DisplayName = "[ScW] AI Focus Priority"))
 enum class EScWAIFocusPriority : uint8
 {

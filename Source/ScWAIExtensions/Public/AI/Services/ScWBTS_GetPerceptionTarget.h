@@ -6,6 +6,9 @@
 
 #include "ScWBTS_GetPerceptionTarget.generated.h"
 
+/**
+ *	Rule for selecting the most relevant enemy from perceived actors.
+ */
 UENUM(BlueprintType)
 enum class ERelevantEnemy_FilterRule : uint8
 {
@@ -14,7 +17,7 @@ enum class ERelevantEnemy_FilterRule : uint8
 };
 
 /**
- * 
+ *	Service that resolves the most relevant perceived target and writes it to a blackboard key via perception component callbacks.
  */
 UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] BTS_GetPerceptionTarget"))
 class UScWBTS_GetPerceptionTarget : public UBTService

@@ -7,7 +7,7 @@
 #include "ScWBTS_GetDistanceTo.generated.h"
 
 /**
- * 
+ *	Service that calculates distance between two blackboard targets and writes it to an output key.
  */
 UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] BTS_GetDistanceTo"))
 class UScWBTS_GetDistanceTo : public UBTService

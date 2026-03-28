@@ -7,7 +7,7 @@
 #include "ScWBTT_GetRelevantPatrolPoint.generated.h"
 
 /**
- * 
+ *	Task that queries the AI controller for the next patrol point and writes its location to a blackboard key.
  */
 UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] BTT_GetRelevantPatrolPoint", KeyWords = "FindRelevantPatrolPoint, FindRelevantReachablePatrolPoint"))
 class UScWBTT_GetRelevantPatrolPoint : public UBTTaskNode

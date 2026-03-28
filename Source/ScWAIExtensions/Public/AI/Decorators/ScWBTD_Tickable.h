@@ -7,7 +7,7 @@
 #include "ScWBTD_Tickable.generated.h"
 
 /**
- * 
+ *	Abstract decorator base that re-evaluates its condition at a configurable tick rate.
  */
 UCLASS(MinimalAPI, Abstract, meta = (DisplayName = "[ScW] BTD_Tickable"))
 class UScWBTD_Tickable : public UBTDecorator

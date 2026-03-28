@@ -7,7 +7,7 @@
 #include "ScWBTS_GetRandomReachablePointInRadius.generated.h"
 
 /**
- * 
+ *	Service that periodically picks a random navigable point within a radius and writes it to a blackboard key.
  */
 UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] BTS_GetRandomReachablePointInRadius"))
 class UScWBTS_GetRandomReachablePointInRadius : public UBTService

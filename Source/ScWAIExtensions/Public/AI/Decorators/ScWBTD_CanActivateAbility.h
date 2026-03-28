@@ -9,7 +9,7 @@
 #include "ScWBTD_CanActivateAbility.generated.h"
 
 /**
- * 
+ *	Decorator that passes when the pawn's ability system can activate an ability matching the configured tags or class.
  */
 UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] BTD_CanActivateAbility"))
 class UScWBTD_CanActivateAbility : public UScWBTD_Tickable

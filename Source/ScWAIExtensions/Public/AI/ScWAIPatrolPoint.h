@@ -7,7 +7,7 @@
 #include "ScWAIPatrolPoint.generated.h"
 
 /**
- * 
+ *	World-placed actor representing a patrol waypoint with a Blueprint-overridable move-to location.
  */
 UCLASS(MinimalAPI, Abstract, meta = (DisplayName = "[ScW] AI Patrol Point"))
 class AScWAIPatrolPoint : public AActor

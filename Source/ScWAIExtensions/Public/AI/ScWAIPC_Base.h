@@ -6,6 +6,9 @@
 
 #include "ScWAIPC_Base.generated.h"
 
+/**
+ *	Tracks a registered GetPerceptionTarget service node and its owning behavior tree for perception callbacks.
+ */
 USTRUCT()
 struct FPerceptionTargetServiceData
 {
@@ -24,7 +27,7 @@ struct FPerceptionTargetServiceData
 };
 
 /**
- *
+ *	Perception component that routes perception updates to registered behavior tree services.
  */
 UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] AI PC Base"))
 class UScWAIPC_Base : public UAIPerceptionComponent

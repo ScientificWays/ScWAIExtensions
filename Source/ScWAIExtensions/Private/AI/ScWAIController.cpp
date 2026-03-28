@@ -44,9 +44,9 @@ void AScWAIController::BeginPlay() // AActor
 	Super::BeginPlay();
 }
 
-void AScWAIController::EndPlay(const EEndPlayReason::Type EndPlayReason) // AActor
+void AScWAIController::EndPlay(const EEndPlayReason::Type InEndPlayReason) // AActor
 {
-	Super::EndPlay(EndPlayReason);
+	Super::EndPlay(InEndPlayReason);
 
 
 }

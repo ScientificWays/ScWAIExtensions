@@ -7,9 +7,9 @@
 #include "ScWBTD_RandomPass.generated.h"
 
 /**
- * 
+ *	Decorator that passes with a configurable random probability.
  */
-UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] BTD_RandomPasss"))
+UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] BTD_RandomPass"))
 class UScWBTD_RandomPass : public UBTDecorator
 {
 	GENERATED_BODY()

@@ -9,8 +9,7 @@
 #include "ScWBTT_LookAt_Clear.generated.h"
 
 /**
- *	Set focal point of Owner from BlackboardKey and optional rotation offset.
- *	If key is not set, distance of 1000 cm is used.
+ *	Task that clears one or all focus priorities on the AI controller.
  */
 UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] BTT_LookAt(Focus)_Clear", KeyWords = "ClearAllFocuses"))
 class UScWBTT_LookAt_Clear : public UBTTaskNode

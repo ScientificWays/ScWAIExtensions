@@ -7,7 +7,7 @@
 #include "ScWBTD_CheckMovementMode.generated.h"
 
 /**
- * 
+ *	Decorator that passes when the pawn's movement mode matches the required mode, with optional observer notification on change.
  */
 UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] BTD_CheckMovementMode"))
 class UScWBTD_CheckMovementMode : public UBTDecorator

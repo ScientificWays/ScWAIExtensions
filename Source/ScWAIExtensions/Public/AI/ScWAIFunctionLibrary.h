@@ -7,8 +7,8 @@
 #include "ScWAIFunctionLibrary.generated.h"
 
 /**
-* 
-*/
+ *	Static helpers for blackboard queries, perception counting, patrol point lookup, and AI navigation.
+ */
 UCLASS(MinimalAPI, meta = (DisplayName = "[ScW] AI Function Library"))
 class UScWAIFunctionLibrary : public UBlueprintFunctionLibrary
 {

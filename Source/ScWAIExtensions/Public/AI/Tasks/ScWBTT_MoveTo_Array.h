@@ -22,7 +22,7 @@ public:
 	
 //~ Begin Task
 protected:
-	virtual void InitializeFromAsset(UBehaviorTree& Asset) override; // UBTNode
+	virtual void InitializeFromAsset(UBehaviorTree& InTreeAsset) override; // UBTNode
 	virtual FString GetStaticDescription() const override; // UBTNode
 	virtual void DescribeRuntimeValues(const UBehaviorTreeComponent& InOwnerTree, uint8* InNodeMemory, EBTDescriptionVerbosity::Type InVerbosity, TArray<FString>& OutValues) const override; // UBTNode
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& InOwnerTree, uint8* InNodeMemory) override; // UBTTaskNode
