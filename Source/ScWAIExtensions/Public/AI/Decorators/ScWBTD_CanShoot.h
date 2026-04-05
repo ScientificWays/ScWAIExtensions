@@ -8,6 +8,8 @@
 
 #include "ScWBTD_CanShoot.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Decorator that passes when the pawn's equipped weapon is ready to fire.
  */
@@ -25,3 +27,5 @@ protected:
 	virtual bool CalculateRawConditionValue(UBehaviorTreeComponent& InOwnerTree, uint8* InNodeMemory) const override; // UBTDecorator
 //~ End Decorator
 };
+
+#undef MODULE_API

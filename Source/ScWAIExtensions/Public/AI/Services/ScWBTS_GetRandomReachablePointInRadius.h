@@ -6,6 +6,8 @@
 
 #include "ScWBTS_GetRandomReachablePointInRadius.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Service that periodically picks a random navigable point within a radius and writes it to a blackboard key.
  */
@@ -43,3 +45,5 @@ protected:
 	FBlackboardKeySelector OutLocationKey;
 //~ End Output
 };
+
+#undef MODULE_API

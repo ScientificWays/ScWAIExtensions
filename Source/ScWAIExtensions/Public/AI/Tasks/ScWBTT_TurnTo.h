@@ -10,6 +10,8 @@
 
 #include "ScWBTT_TurnTo.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Turn [To] or [Relative To] selected BlackboardKey Target or Owner if not set
  */
@@ -75,3 +77,5 @@ protected:
 #endif // WITH_EDITORONLY_DATA
 //~ End Settings
 };
+
+#undef MODULE_API

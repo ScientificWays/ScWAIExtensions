@@ -6,6 +6,8 @@
 
 #include "ScWBTT_GetRandomReachablePointInRadius.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Task that finds a random navigable point within a radius of a center location and writes it to a blackboard key.
  */
@@ -47,3 +49,5 @@ protected:
 	FBlackboardKeySelector OutLocationKey;
 //~ End Output
 };
+
+#undef MODULE_API

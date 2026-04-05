@@ -8,6 +8,8 @@
 
 #include "ScWBTD_CheckOcclusion.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Decorator that passes when a line trace between two blackboard targets is unoccluded.
  */
@@ -61,3 +63,5 @@ protected:
 	TEnumAsByte<EDrawDebugTrace::Type> DrawDebugTraceType;
 //~ End Settings
 };
+
+#undef MODULE_API

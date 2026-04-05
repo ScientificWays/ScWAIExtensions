@@ -6,6 +6,8 @@
 
 #include "ScWBTT_TryActivateAbility.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Task that attempts to activate a gameplay ability by tags or blackboard class key.
  */
@@ -34,3 +36,5 @@ protected:
 	FBlackboardKeySelector AbilityClassKey; // If set, try activate ability by class
 //~ End Settings
 };
+
+#undef MODULE_API

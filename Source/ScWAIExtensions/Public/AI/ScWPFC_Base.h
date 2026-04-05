@@ -8,6 +8,8 @@
 
 #include "ScWPFC_Base.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Base crowd-following path component with lifecycle hooks.
  */
@@ -26,3 +28,5 @@ protected:
 	virtual void EndPlay(const EEndPlayReason::Type InReason) override; // UActorComponent
 //~ End Initialize
 };
+
+#undef MODULE_API

@@ -8,6 +8,8 @@
 
 #include "ScWBTD_CanActivateAbility.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Decorator that passes when the pawn's ability system can activate an ability matching the configured tags or class.
  */
@@ -47,3 +49,5 @@ protected:
 	//bool bTryCacheAbilityOnBecomeRelevant;
 //~ End Settings
 };
+
+#undef MODULE_API

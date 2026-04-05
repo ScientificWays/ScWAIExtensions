@@ -6,6 +6,8 @@
 
 #include "ScWBTD_RandomPass.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Decorator that passes with a configurable random probability.
  */
@@ -31,3 +33,5 @@ protected:
 	float PassProbability = 0.5f;
 //~ End Settings
 };
+
+#undef MODULE_API

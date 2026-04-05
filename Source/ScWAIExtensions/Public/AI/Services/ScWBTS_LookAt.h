@@ -10,6 +10,8 @@
 
 #include "ScWBTS_LookAt.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Set focal point of Owner from BlackboardKey and optional rotation offset.
  *	If key is not set, distance of 1000 cm is used.
@@ -64,3 +66,5 @@ protected:
 #endif // WITH_EDITORONLY_DATA
 //~ End Settings
 };
+
+#undef MODULE_API

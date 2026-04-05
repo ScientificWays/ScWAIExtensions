@@ -6,6 +6,8 @@
 
 #include "ScWAIFunctionLibrary.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Static helpers for blackboard queries, perception counting, patrol point lookup, and AI navigation.
  */
@@ -50,3 +52,5 @@ public:
 	static UBrainComponent* TryGetActorBrainComponent(const AActor* InActor);
 //~ End Brain
 };
+
+#undef MODULE_API

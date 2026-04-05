@@ -6,6 +6,8 @@
 
 #include "ScWAIPC_Base.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Tracks a registered GetPerceptionTarget service node and its owning behavior tree for perception callbacks.
  */
@@ -65,3 +67,5 @@ protected:
 	void NotifyPerceptionTargetServices();
 //~ End Callbacks
 };
+
+#undef MODULE_API

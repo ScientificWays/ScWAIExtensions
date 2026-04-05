@@ -6,6 +6,8 @@
 
 #include "ScWAIPatrolPoint.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	World-placed actor representing a patrol waypoint with a Blueprint-overridable move-to location.
  */
@@ -25,3 +27,5 @@ public:
 	FVector BP_GetMoveToLocation() const;
 //~ End Location
 };
+
+#undef MODULE_API

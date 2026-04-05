@@ -8,6 +8,8 @@
 
 #include "ScWBTD_CheckDistance.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Check distance between two Targets and pass if less than (obviously) PassIfLessThanDistance.
  *	If either Target is not set, first key (likely SelfActor) is used.
@@ -57,3 +59,5 @@ protected:
 	bool bVerticalDistance;
 //~ End Settings
 };
+
+#undef MODULE_API

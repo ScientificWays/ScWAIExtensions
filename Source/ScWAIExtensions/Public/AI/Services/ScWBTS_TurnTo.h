@@ -8,6 +8,8 @@
 
 #include "ScWBTS_TurnTo.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Service that smoothly rotates the pawn toward a blackboard target at a configurable speed.
  */
@@ -64,3 +66,5 @@ protected:
 #endif // WITH_EDITORONLY_DATA
 //~ End Settings
 };
+
+#undef MODULE_API

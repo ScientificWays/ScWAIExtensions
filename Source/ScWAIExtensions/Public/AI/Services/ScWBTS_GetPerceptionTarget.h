@@ -6,6 +6,8 @@
 
 #include "ScWBTS_GetPerceptionTarget.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Rule for selecting the most relevant enemy from perceived actors.
  */
@@ -75,3 +77,5 @@ protected:
 	FBlackboardKeySelector OutRelevantTargetKey;
 //~ End Output
 };
+
+#undef MODULE_API

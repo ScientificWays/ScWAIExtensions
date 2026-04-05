@@ -8,6 +8,8 @@
 
 #include "ScWBTD_CheckVelocity.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Check velocity of Target and pass if it more than MinVelocity.
  *	If Target is not set, first key (likely SelfActor) is used.
@@ -43,3 +45,5 @@ protected:
 	bool bCheckHorizontalVelocityOnly;
 //~ End Settings
 };
+
+#undef MODULE_API

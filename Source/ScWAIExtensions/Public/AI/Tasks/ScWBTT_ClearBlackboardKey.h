@@ -8,6 +8,8 @@
 
 #include "ScWBTT_ClearBlackboardKey.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Task that clears the selected blackboard key value.
  */
@@ -32,3 +34,5 @@ protected:
 	
 //~ End Settings
 };
+
+#undef MODULE_API

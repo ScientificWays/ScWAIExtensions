@@ -6,6 +6,8 @@
 
 #include "ScWBTD_CheckMovementMode.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Decorator that passes when the pawn's movement mode matches the required mode, with optional observer notification on change.
  */
@@ -42,3 +44,5 @@ protected:
 	bool bNotifyObserverOnMovementModeChanged;
 //~ End Settings
 };
+
+#undef MODULE_API

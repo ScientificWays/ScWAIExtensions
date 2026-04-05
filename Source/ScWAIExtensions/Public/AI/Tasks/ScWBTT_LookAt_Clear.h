@@ -8,6 +8,8 @@
 
 #include "ScWBTT_LookAt_Clear.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Task that clears one or all focus priorities on the AI controller.
  */
@@ -36,3 +38,5 @@ protected:
 	bool bClearAllFocuses;
 //~ End Settings
 };
+
+#undef MODULE_API

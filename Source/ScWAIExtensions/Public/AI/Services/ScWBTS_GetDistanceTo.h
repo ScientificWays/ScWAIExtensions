@@ -6,6 +6,8 @@
 
 #include "ScWBTS_GetDistanceTo.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Service that calculates distance between two blackboard targets and writes it to an output key.
  */
@@ -55,3 +57,5 @@ protected:
 	FBlackboardKeySelector OutDistanceKey;
 //~ End Output
 };
+
+#undef MODULE_API

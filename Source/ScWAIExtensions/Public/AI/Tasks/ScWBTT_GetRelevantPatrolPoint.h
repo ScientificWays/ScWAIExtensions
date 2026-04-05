@@ -6,6 +6,8 @@
 
 #include "ScWBTT_GetRelevantPatrolPoint.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Task that queries the AI controller for the next patrol point and writes its location to a blackboard key.
  */
@@ -45,3 +47,5 @@ protected:
 	FBlackboardKeySelector OutLocationKey;
 //~ End Output
 };
+
+#undef MODULE_API

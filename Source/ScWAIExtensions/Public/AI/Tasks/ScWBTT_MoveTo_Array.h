@@ -8,6 +8,8 @@
 
 #include "ScWBTT_MoveTo_Array.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Moves the AI pawn through the specified locations array blackboard entry using the navigation system.
  */
@@ -47,3 +49,5 @@ protected:
 	float MoveToAcceptanceRadiusXY;
 //~ End Settings
 };
+
+#undef MODULE_API

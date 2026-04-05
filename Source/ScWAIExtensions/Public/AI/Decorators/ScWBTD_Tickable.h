@@ -6,6 +6,8 @@
 
 #include "ScWBTD_Tickable.generated.h"
 
+#define MODULE_API SCWAIEXTENSIONS_API
+
 /**
  *	Abstract decorator base that re-evaluates its condition at a configurable tick rate.
  */
@@ -31,3 +33,5 @@ protected:
 	float TickRate;
 //~ End Settings
 };
+
+#undef MODULE_API
